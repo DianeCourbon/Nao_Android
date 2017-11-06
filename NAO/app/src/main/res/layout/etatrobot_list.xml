@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvmoteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moteur"
+        android:layout_column="1"
+        android:padding="3dip"/>
+
+    <EditText
+        android:id="@+id/idmoteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_column="2"
+        android:layout_toEndOf="@+id/tvmoteur"
+        android:enabled="true"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:padding="3dip"
+        android:text="0" />
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/tvmoteur"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1"
+        android:layout_below="@+id/tvmoteur">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tvposition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Position"
+                android:layout_column="1"
+                android:padding="3dip"/>
+
+            <EditText
+                android:id="@+id/idposition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:inputType="number|numberSigned|numberDecimal"
+                android:padding="3dip"
+                android:text="00" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tvtemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Température"
+                android:layout_column="1"
+                android:padding="3dip"/>
+
+            <EditText
+                android:id="@+id/idtemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="0 °C" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tvetat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etat"
+                android:layout_column="1"
+                android:padding="3dip"/>
+
+            <Button
+                android:id="@+id/idetat"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=" "
+                android:background="@color/colorAccent"
+                android:layout_column="2"
+                android:padding="3dip"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090"
+            />
+    </TableLayout>
+
+</RelativeLayout>
