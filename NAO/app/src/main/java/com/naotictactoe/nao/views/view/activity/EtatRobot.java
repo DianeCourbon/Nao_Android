@@ -1,4 +1,4 @@
-package com.naotictactoe.nao.views;
+package com.naotictactoe.nao.views.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import com.naotictactoe.nao.R;
 
 import java.util.ArrayList;
 
-import adapter.EtatRobot_Adapter;
-import adapter.Motor_Object;
+import com.naotictactoe.nao.views.view.adapter.EtatRobot_Adapter;
+import com.naotictactoe.nao.views.view.adapter.Motor_Object;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

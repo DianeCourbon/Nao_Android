@@ -1,4 +1,4 @@
-package com.naotictactoe.nao.views;
+package com.naotictactoe.nao.views.view.activity;
 
 /**
  * Created by Cyci on 04/11/2017.
