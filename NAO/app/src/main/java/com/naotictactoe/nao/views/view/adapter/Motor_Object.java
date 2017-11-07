@@ -1,4 +1,4 @@
-package adapter;
+package com.naotictactoe.nao.views.view.adapter;
 
 /**
  * Created by Cyci on 05/11/2017.

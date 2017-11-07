@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,23 +17,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.MancheConfig"
+            android:name=".views.view.activity.MancheConfigActivity"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".views.EndGame"
+            android:name=".views.view.activity.EndGameActivity"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".views.EtatRobot"
+            android:name=".views.view.activity.EtatRobot"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".views.GameCurrent"
+            android:name=".views.view.activity.GameCurrent"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".views.StatistiquesJeu"
+            android:name=".views.view.activity.StatistiquesJeu"
             android:label="@string/app_name">
         </activity>
     </application>

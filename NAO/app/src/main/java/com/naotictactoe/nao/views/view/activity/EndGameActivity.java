@@ -1,7 +1,8 @@
-package com.naotictactoe.nao.views;
+package com.naotictactoe.nao.views.view.activity;
 
 /**
  * Created by Cyci on 04/11/2017.
+ * Modified by Diane on 06/11/2017
  */
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,18 +15,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EndGame extends AppCompatActivity {
+public class EndGameActivity extends AppCompatActivity {
 
     @BindView(R.id.idResult) EditText result;
     @BindView(R.id.idNbPartiesGagnees) EditText nbMatchWon;
 
     @OnClick(R.id.replayButt) public void Replay(){
-        Intent i = new Intent(EndGame.this,MancheConfig.class);
+        Intent i = new Intent(EndGameActivity.this,MancheConfigActivity.class);
         startActivity(i);
     }
 
     @OnClick(R.id.quitButt) public void BackToMain(){
-        Intent i = new Intent(EndGame.this,MainActivity.class);
+        Intent i = new Intent(EndGameActivity.this,MainActivity.class);
         startActivity(i);
     }
     protected void onCreate(Bundle savedInstanceState) {
