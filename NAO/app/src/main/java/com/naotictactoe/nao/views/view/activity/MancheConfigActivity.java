@@ -33,8 +33,8 @@ public class MancheConfigActivity extends AppCompatActivity {
     private boolean symbole_joueur = false;
     private boolean joueur_tour_1 = false;
     private boolean gagnant_joueur = false;
-    private int id_robot;
-    private int id_session;
+    private int id_robot=1;
+    private int id_session=1;
 
 
     //Déclaration des variables
@@ -57,10 +57,9 @@ public class MancheConfigActivity extends AppCompatActivity {
         radTour = (RadioButton) findViewById(tour);
         robotIP = ipRobot.getText().toString();
         String text = radSymbol.getText().toString(); //utiliser le append du prof
-
-        
-
         Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
+
+        usePost(symbole_joueur, joueur_tour_1,gagnant_joueur,id_robot,id_session);
 
         Intent i = new Intent(MancheConfigActivity.this,EndGameActivity.class);
         startActivity(i);
@@ -73,7 +72,11 @@ public class MancheConfigActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mancheConfigManager = new MancheConfigManager();
+        StartPlay();
+    }
 
+    private void usePost(boolean symbole_joueur, boolean joueur_tour_1,boolean gagnant_joueur,int id_robot,int id_session){
+        mancheConfigManager.MancheConfigPost(symbole_joueur, joueur_tour_1,gagnant_joueur,id_robot,id_session);
     }
 
     @Override

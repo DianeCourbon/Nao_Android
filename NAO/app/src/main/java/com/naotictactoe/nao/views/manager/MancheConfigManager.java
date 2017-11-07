@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class MancheConfigManager {
-    private  static final String SERVER_URL = "http://192.168.215.98/nao/";
+    private  static final String SERVER_URL = "http://192.168.0.19/nao/";
 
     public void MancheConfigPost(boolean symbole_joueur, boolean joueur_tour_1, boolean gagnant_joueur, int id_robot, int id_session){
         //Here a MancheConfig interceptor is created
