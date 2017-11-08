@@ -12,7 +12,7 @@ import com.naotictactoe.nao.views.service.MancheConfigService;
 import com.squareup.otto.Produce;
 
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
+//import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,16 +24,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class MancheConfigManager {
-    private  static final String SERVER_URL = "http://192.168.0.19/nao/";
+    private  static final String SERVER_URL = "http://192.168.0.19";
 
     public void MancheConfigPost(boolean symbole_joueur, boolean joueur_tour_1, boolean gagnant_joueur, int id_robot, int id_session){
         //Here a MancheConfig interceptor is created
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        //HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        //logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         //The logging interceptor will be added to the http client
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(logging);
+        //httpClient.addInterceptor(logging);
 
         //The Retrofit builder will have the client attached, in order to get connection logs
         Retrofit retrofit = new Retrofit.Builder()
@@ -44,24 +44,25 @@ public class MancheConfigManager {
 
         MancheConfigService mancheConfigService = retrofit.create(MancheConfigService.class);
 
-        Call<PartieJoueeModel> call = mancheConfigService.post(symbole_joueur,joueur_tour_1,gagnant_joueur,id_robot,id_session);
+        Call<Void> call = mancheConfigService.post(symbole_joueur,joueur_tour_1,gagnant_joueur,id_robot,id_session);
 
-        call.enqueue(new Callback<PartieJoueeModel>() {
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<PartieJoueeModel> call, Response<PartieJoueeModel> response) {
-                BusProvider.getInstance().post(new MancheConfigEvent(response.body()));
-                Log.e("Configuration(manager)","Success");
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                BusProvider.getInstance().post(new MancheConfigEvent());
+                Log.d("Configuration(manager)","Success");
             }
 
             @Override
-            public void onFailure(Call<PartieJoueeModel> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
+                t.printStackTrace();
                 // handle execution failures like no internet connectivity
                 BusProvider.getInstance().post(new ErrorCodeEvent(-2,t.getMessage()));
             }
         });
     }
 
-    @Produce
+    /*@Produce
     public MancheConfigEvent produceServerEvent(PartieJoueeModel serverResponse) {
         return new MancheConfigEvent(serverResponse);
     }
@@ -69,6 +70,6 @@ public class MancheConfigManager {
     @Produce
     public ErrorCodeEvent produceErrorEvent(int errorCode, String errorMsg) {
         return new ErrorCodeEvent(errorCode, errorMsg);
-    }
+    }*/
 }
 

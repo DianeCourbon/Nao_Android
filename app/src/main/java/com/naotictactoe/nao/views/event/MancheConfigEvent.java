@@ -7,17 +7,5 @@ import com.naotictactoe.nao.views.model.PartieJoueeModel;
  */
 
 public class MancheConfigEvent {
-    private PartieJoueeModel partie;
 
-    public MancheConfigEvent(PartieJoueeModel partie) {
-        this.partie = partie;
-    }
-
-    public PartieJoueeModel getPartie() {
-        return partie;
-    }
-
-    public void setPartie(PartieJoueeModel partie) {
-        this.partie = partie;
-    }
 }

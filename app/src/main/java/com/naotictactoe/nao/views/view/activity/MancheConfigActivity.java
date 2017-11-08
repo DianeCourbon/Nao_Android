@@ -10,9 +10,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.naotictactoe.nao.R;
+import com.naotictactoe.nao.views.event.MancheConfigEvent;
 import com.naotictactoe.nao.views.manager.MancheConfigManager;
 import com.naotictactoe.nao.views.service.BusProvider;
 import com.squareup.otto.Bus;
+import com.squareup.otto.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,13 +58,10 @@ public class MancheConfigActivity extends AppCompatActivity {
         tour = rgTour.getCheckedRadioButtonId();
         radTour = (RadioButton) findViewById(tour);
         robotIP = ipRobot.getText().toString();
-        String text = radSymbol.getText().toString(); //utiliser le append du prof
-        Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
+        //String text = radSymbol.getText().toString(); //utiliser le append du prof
+        //Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
 
-        usePost(symbole_joueur, joueur_tour_1,gagnant_joueur,id_robot,id_session);
-
-        Intent i = new Intent(MancheConfigActivity.this,EndGameActivity.class);
-        startActivity(i);
+        mancheConfigManager.MancheConfigPost(symbole_joueur, joueur_tour_1,gagnant_joueur,id_robot,id_session);
 
     }
 
@@ -72,11 +71,6 @@ public class MancheConfigActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mancheConfigManager = new MancheConfigManager();
-        StartPlay();
-    }
-
-    private void usePost(boolean symbole_joueur, boolean joueur_tour_1,boolean gagnant_joueur,int id_robot,int id_session){
-        mancheConfigManager.MancheConfigPost(symbole_joueur, joueur_tour_1,gagnant_joueur,id_robot,id_session);
     }
 
     @Override
@@ -89,6 +83,13 @@ public class MancheConfigActivity extends AppCompatActivity {
     public void onPause(){
         super.onPause();
         BusProvider.getInstance().unregister(this);
+    }
+
+    @Subscribe()
+    public void start(MancheConfigEvent mancheConfigEvent){
+        Toast.makeText(getApplicationContext(),"Configuration envoyée",Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(MancheConfigActivity.this,EndGameActivity.class);
+        startActivity(i);
     }
 
     /*@Subscribe

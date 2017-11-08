@@ -15,7 +15,7 @@ public class PartieJoueeModel implements Serializable {
     private boolean joueur_tour_1;
     @SerializedName("gagnant_joueur")
     private boolean gagnant_joueur;
-    @SerializedName("robot")
+    @SerializedName("id_robot")
     private int id_robot;
     @SerializedName("id_session")
     private int id_session;

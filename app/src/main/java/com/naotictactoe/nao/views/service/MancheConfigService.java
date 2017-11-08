@@ -16,8 +16,8 @@ import retrofit2.http.POST;
 
 public interface MancheConfigService {
     @FormUrlEncoded
-    @POST("/post-parties.php")
-    Call<PartieJoueeModel> post(
+    @POST("/nao/post-partie.php")
+    Call<Void> post(
             @Field("symbole_joueur") boolean symbole_joueur,
             @Field("joueur_tour_1") boolean joueur_tour_1,
             @Field("gagnant_joueur") boolean gagnant_joueur,
