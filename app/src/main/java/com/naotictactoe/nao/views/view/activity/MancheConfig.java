@@ -36,8 +36,14 @@ public class MancheConfig extends AppCompatActivity {
 
         symbol = rgSymbol.getCheckedRadioButtonId();
         radSymbol = (RadioButton) findViewById(symbol);
+        if(radSymbol == null){
+            radSymbol=(RadioButton) findViewById(R.id.radRond);
+        }
         tour = rgTour.getCheckedRadioButtonId();
         radTour = (RadioButton) findViewById(tour);
+        if(radTour == null){
+            radTour=(RadioButton) findViewById(R.id.radFollow);
+        }
 
         robotIP = ipRobot.getText().toString();
 

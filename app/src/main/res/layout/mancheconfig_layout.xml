@@ -42,8 +42,7 @@
             android:layout_marginTop="21dp"
             android:layout_marginStart="31dp"
             android:text="Croix"
-            android:layout_below="@+id/RadRond"
-            android:layout_alignStart="@+id/RadRond" />
+            />
     </RadioGroup>
     <TextView
         android:id="@+id/tvPremier"
