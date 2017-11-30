@@ -4,27 +4,30 @@
 
     <Button
         android:id="@+id/gameButt"
-        android:layout_width="wrap_content"
+        style="@style/ButtonAccent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="87dp"
-        android:text="JOUER"
+        android:text="Jouer"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/StatButt"
-        android:layout_width="wrap_content"
+        style="@style/ButtonAccent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gameButt"
-        android:layout_marginTop="72dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margins"
         android:text="Statistiques" />
     <Button
         android:id="@+id/EtatRobot"
-        android:layout_width="wrap_content"
+        style="@style/ButtonAccent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/StatButt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="@dimen/margins"
         android:text="Etat du robot" />
 </RelativeLayout>
