@@ -66,7 +66,6 @@ public class EtatRobot_Adapter extends BaseAdapter implements AdapterView.OnItem
             mViewHolder.idMoteur = (EditText) convertView.findViewById(R.id.idmoteur);
             mViewHolder.idPosition = (EditText) convertView.findViewById(R.id.idposition);
             mViewHolder.idTemperature = (EditText) convertView.findViewById(R.id.idtemperature);
-            mViewHolder.idEtat = (Button) convertView.findViewById(R.id.idetat);
 
             // on donne le tag MyViewHolder Ã  convertView
             convertView.setTag(mViewHolder);
@@ -83,12 +82,6 @@ public class EtatRobot_Adapter extends BaseAdapter implements AdapterView.OnItem
         mViewHolder.idMoteur.setText(Integer.toString(listItem.getNumeroMoteur()));
         mViewHolder.idPosition.setText(Double.toString(listItem.getPositionMoteur()));
         mViewHolder.idTemperature.setText(Double.toString(listItem.getTemperatureMoteur()));
-        if(listItem.getEtatRobot()){
-            mViewHolder.idEtat.setBackgroundColor(Color.GREEN);
-        } else {
-            mViewHolder.idEtat.setBackgroundColor(Color.RED);
-        }
-
 
         // nous retournos la vue de l'item demandÃ©
         return convertView;
@@ -98,7 +91,6 @@ public class EtatRobot_Adapter extends BaseAdapter implements AdapterView.OnItem
     // les vues Ã  chaque appel de getView, nous gagnons ainsi en performance
     private class MyViewHolder {
         EditText idMoteur, idPosition, idTemperature;
-        Button idEtat;
     }
 
     @Override

@@ -27,15 +27,8 @@ public class MancheConfigManager {
     private  static final String SERVER_URL = "http://192.168.0.19";
 
     public void MancheConfigPost(boolean symbole_joueur, boolean joueur_tour_1, boolean gagnant_joueur, int id_robot, int id_session){
-        //Here a MancheConfig interceptor is created
-        //HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        //logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        //The logging interceptor will be added to the http client
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        //httpClient.addInterceptor(logging);
 
-        //The Retrofit builder will have the client attached, in order to get connection logs
         Retrofit retrofit = new Retrofit.Builder()
                 .client(httpClient.build())
                 .addConverterFactory(GsonConverterFactory.create())

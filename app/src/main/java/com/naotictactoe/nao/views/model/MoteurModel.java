@@ -10,41 +10,37 @@ import java.io.Serializable;
 
 public class MoteurModel implements Serializable {
     @SerializedName("temperature")
-    private int temperature;
+    private Double temperature;
     @SerializedName("inclinaison")
-    private int inclinaison;
-    @SerializedName("id_robot")
-    private int id_robot;
+    private Double inclinaison;
+    @SerializedName("id_moteur")
+    private int id_moteur;
 
-    public MoteurModel(int id_moteur, int temperature, int inclinaison, int id_robot) {
+    public MoteurModel(int id_moteur, Double temperature, Double inclinaison){
         this.temperature = temperature;
         this.inclinaison = inclinaison;
-        this.id_robot = id_robot;
+        this.id_moteur = id_moteur;
     }
 
     //Get
-    public int getTemperature() {
+    public Double getTemperature() {
         return temperature;
     }
-
-    public int getInclinaison() {
+    public Double getInclinaison() {
         return inclinaison;
     }
-
-    public int getId_robot() {
-        return id_robot;
+    public int getId_moteur() {
+        return id_moteur;
     }
 
     //Set
-    public void setTemperature(int temperature) {
+    public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
-
-    public void setInclinaison(int inclinaison) {
+    public void setInclinaison(Double inclinaison) {
         this.inclinaison = inclinaison;
     }
-
-    public void setId_robot(int id_robot) {
-        this.id_robot = id_robot;
+    public void setId_moteur(int id_moteur) {
+        this.id_moteur = id_moteur;
     }
 }
