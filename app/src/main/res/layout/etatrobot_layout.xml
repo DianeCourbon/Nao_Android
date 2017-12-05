@@ -19,7 +19,7 @@
         android:layout_below="@+id/textView"
         android:layout_marginStart="23dp"
         android:layout_marginTop="25dp"
-        android:text="TextView" />
+        android:text="Batterie : " />
 
     <ListView
         android:layout_width="match_parent"
@@ -31,12 +31,12 @@
 
     <EditText
         android:id="@+id/idBatterie"
+        style="@style/EditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="12dp"
-        android:layout_toEndOf="@+id/tvBatterie"
+        android:layout_alignBaseline="@+id/tvBatterie"
+        android:layout_alignBottom="@+id/tvBatterie"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="5%" />

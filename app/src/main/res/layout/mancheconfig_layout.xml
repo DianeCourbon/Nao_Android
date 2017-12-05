@@ -10,17 +10,21 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="15dp"
+        style="@style/ButtonAccent"
         android:text="JOUER" />
 
     <TextView
         android:id="@+id/tvForme"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
-        android:text="Quelle forme veux-tu avoir ?" />
+        android:layout_alignStart="@+id/goButt"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="14dp"
+        android:text="Quelle forme veux-tu avoir ?"
+        android:textStyle="bold" />
+
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -31,8 +35,7 @@
         <RadioButton android:id="@+id/radRond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="23dp"
+            style="@style/TextStyle"
             android:text="Rond" />
 
         <RadioButton
@@ -41,31 +44,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
             android:layout_marginStart="31dp"
+            style="@style/TextStyle"
             android:text="Croix"
             />
     </RadioGroup>
+
     <TextView
         android:id="@+id/tvPremier"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tu veux jouer en premier ?"
+        android:layout_alignStart="@+id/goButt"
         android:layout_below="@+id/RadioGroup1"
-        android:layout_alignStart="@+id/tvForme"
-        android:layout_marginTop="14dp" />
+        android:layout_marginTop="14dp"
+        android:text="Tu veux jouer en premier ?"
+        android:textStyle="bold" />
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/radioGroup2"
         android:layout_below="@+id/tvPremier"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="23dp">
+        android:layout_alignParentStart="true">
+
         <RadioButton
             android:id="@+id/radStart"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:layout_marginStart="31dp"
+            android:layout_marginTop="24dp"
             android:text="Je commence" />
         <RadioButton
             android:id="@+id/radFollow"
@@ -73,24 +81,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginStart="31dp"
+            style="@style/TextStyle"
             android:text="Je passe" />
     </RadioGroup>
+
     <TextView
         android:id="@+id/tvRobot"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quel robot est actif ?"
+        android:layout_alignStart="@+id/goButt"
         android:layout_below="@+id/radioGroup2"
-        android:layout_alignStart="@+id/tvForme"
-        android:layout_marginTop="22dp" />
+        android:layout_marginTop="22dp"
+        android:text="Quel robot est actif ?"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/ipRobot"
-        android:layout_width="wrap_content"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:hint="IP robot"
-        android:inputType="textPersonName"
         android:layout_below="@+id/tvRobot"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:hint="IP robot"
+        android:inputType="textPersonName" />
 </RelativeLayout>

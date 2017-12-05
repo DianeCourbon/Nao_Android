@@ -29,16 +29,16 @@ import butterknife.ButterKnife;
 public class StatistiquesJeu extends AppCompatActivity {
     PieChart mChart;
     PieChart mChart2;
-    // we're going to display pie chart for school attendance
-    private int[] yValues = {21, 2, 2};
-    private String[] xValues = {"Present Days", "Absents", "Leaves"};
-    private int[] yValues2 = {10, 5, 2};
-    private String[] xValues2 = {"Present Days2", "Absents2", "Leaves"};
+    // Ajouter les valeurs dans la pie chart dans les crochers.
+    // un tableau avec dans l'ordre : parties perdues, gagnées et nulles
+    private int[] yValues = {21, 2, 2}; //sur la partie en cours
+    private String[] xValues = {"Parties perdues", "Parties gagnées", "Parties nulles"};
+    private int[] yValues2 = {10, 5, 2}; //global sur toutes les parties
+    private String[] xValues2 = {"Parties perdues", "Parties gagnées", "Parties nulles"};
 
     // colors for different sections in pieChart
     public static  final int[] MY_COLORS = {
-            Color.rgb(84,124,101), Color.rgb(64,64,64), Color.rgb(153,19,0),
-            Color.rgb(38,40,53), Color.rgb(215,60,55)
+            Color.rgb(45,196,225), Color.rgb(53,91,183), Color.rgb(225,0,0)
     };
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class StatistiquesJeu extends AppCompatActivity {
         mChart = (PieChart) findViewById(R.id.chart1);
         mChart2 = (PieChart) findViewById(R.id.chart2);
 
-        //   mChart.setUsePercentValues(true);
         mChart.getDescription().setEnabled(false);
         mChart2.getDescription().setEnabled(false);
 
@@ -91,7 +90,7 @@ public class StatistiquesJeu extends AppCompatActivity {
 
         });
             // setting sample Data for Pie Chart
-            setDataForPieChart(mChart, yValues, xValues);
+        setDataForPieChart(mChart, yValues, xValues);
         setDataForPieChart(mChart2, yValues2, xValues2);
     }
     public void setDataForPieChart(PieChart mChart, int[] yValues, String[] xValues) {
@@ -122,8 +121,6 @@ public class StatistiquesJeu extends AppCompatActivity {
 
         //  create pie data object and set xValues and yValues and set it to the pieChart
         PieData data = new PieData(dataSet);
-        //   data.setValueFormatter(new DefaultValueFormatter());
-        //   data.setValueFormatter(new PercentFormatter());
 
         data.setValueFormatter(new MyValueFormatter());
         data.setValueTextSize(11f);
@@ -139,7 +136,6 @@ public class StatistiquesJeu extends AppCompatActivity {
 
         // animate piechart
         mChart.animateXY(1400, 1400);
-
 
         // Legends to show on bottom of the graph
         Legend l = mChart.getLegend();

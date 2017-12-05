@@ -17,7 +17,6 @@ import butterknife.OnClick;
 public class EndGame extends AppCompatActivity {
 
     @BindView(R.id.idResult) EditText result;
-    @BindView(R.id.idNbPartiesGagnees) EditText nbMatchWon;
 
     @OnClick(R.id.replayButt) public void Replay(){
         Intent i = new Intent(EndGame.this,MancheConfig.class);
@@ -34,7 +33,6 @@ public class EndGame extends AppCompatActivity {
         setContentView(R.layout.endgame_layout);
         ButterKnife.bind(this);
 
-        result.setText("Vous avez perdu !! ou gagner... c'est pas encore codé");
-        nbMatchWon.setText("13");
+        result.setText("Gagné !");
     }
 }

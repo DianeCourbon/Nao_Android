@@ -6,6 +6,7 @@
 
     <TextView
         android:id="@+id/tvmoteur"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Moteur"
@@ -14,6 +15,7 @@
 
     <EditText
         android:id="@+id/idmoteur"
+        style="@style/EditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -43,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Position"
+                style="@style/TextStyle"
                 android:layout_column="1"
                 android:padding="3dip"/>
 
@@ -51,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
+                style="@style/EditTextStyle"
                 android:inputType="number|numberSigned|numberDecimal"
                 android:padding="3dip"
                 android:text="00" />
@@ -66,7 +70,8 @@
                 android:layout_height="wrap_content"
                 android:text="Température"
                 android:layout_column="1"
-                android:padding="3dip"/>
+                android:padding="3dip"
+                style="@style/TextStyle"/>
 
             <EditText
                 android:id="@+id/idtemperature"
@@ -74,7 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:padding="3dip"
-                android:text="0 °C" />
+                android:text="0 °C"
+                style="@style/EditTextStyle"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -86,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:text="Etat"
                 android:layout_column="1"
-                android:padding="3dip"/>
+                android:padding="3dip"
+                style="@style/TextStyle"/>
 
             <Button
                 android:id="@+id/idetat"
